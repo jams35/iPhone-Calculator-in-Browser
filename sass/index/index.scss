@@ -1,0 +1,98 @@
+@import "../colors/colors.scss";
+
+body{
+    min-height: 100% !important;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: $color-main-backgroud;
+}
+
+.container{
+    height: 100%;
+    background-color: $color-main-backgroud;
+    padding-top: 20%;
+}
+
+.result{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: $color-result;
+    height: 39%;
+
+    span{
+        margin-right: 10px;
+        font-size: 120px;
+        justify-self: flex-end;
+    }
+}
+
+@mixin buttons-style ($width-button, $height-button, $backgroud-color-button, $display-button, $grid-template-columns) {
+    width: $width-button;
+    height: $height-button;
+    background-color: $backgroud-color-button;
+    display: $display-button;
+    grid-template-columns: $grid-template-columns;
+}
+
+.buttons{
+    @include buttons-style(100%, 60%, $backgroud-buttons, grid, 25% 25% 25% 25%);
+}
+
+@mixin item-style($width-item,$height-item,$display-item,$justify-content-item,$align-items-item,$font-size-item,$color-item, $border-radius-item, $padding-item, $cursor-item, $align-self-item, $justify-self-item, $margin-item){
+    width: $width-item;
+    height: $height-item;
+    display: $display-item;
+    justify-content: $justify-content-item;
+    align-items: $align-items-item;
+    font-size: $font-size-item;
+    color: $color-item;
+    border-radius: $border-radius-item;
+    padding: $padding-item;
+    cursor: $cursor-item;
+    align-self: $align-self-item;
+    justify-self: $justify-self-item;
+    margin:$margin-item;
+}
+
+.item{
+    @include item-style(90px, 90px, flex, center, center, 35px, $color-item, 100%, 20px, pointer, center, center, 5px)
+}
+
+.item1,
+#percent{
+    background-color: $backgroud-color-percent;
+    border: none;
+    color: #000;
+}
+
+/*Mixin created to style the class buttons, numbers, números, comma, item1, item2*/
+@mixin style-13nc($backgroud-color-item, $border-item){
+    background-color:$backgroud-color-item;
+    border: $border-item;
+}
+
+
+.item3{
+    @include style-13nc(#ff9f0a, none)
+}
+
+.numbers,
+#comma{
+    @include style-13nc(#343434, none)
+}
+
+#negative, #clear{
+    color: black;
+}
+
+.itemZero{
+    background-color: #343434;
+    width: 190px;
+    border-radius: 135px;
+    grid-column: span 2;
+    border: none;
+}
+
+
+
